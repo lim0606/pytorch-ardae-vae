@@ -1,6 +1,6 @@
 # AR-DAE: Towards Unbiased Neural Entropy Gradient Estimation 
 Pytorch implementation of AR-DAE on our paper: 
-> Jae Hyun Lim, Aaron Courville, Christopher Pal, Chin-Wei Huang, *AR-DAE: Towards Unbiased Neural Entropy Gradient Estimation* (2020)
+> Jae Hyun Lim, Aaron Courville, Christopher Pal, Chin-Wei Huang, [*AR-DAE: Towards Unbiased Neural Entropy Gradient Estimation*](https://arxiv.org/abs/2006.05164) (2020)
 
 ## Toy example of AR-DAE
 Example code to train AR-DAE on swiss roll dataset:  
