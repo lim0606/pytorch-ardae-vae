@@ -1,0 +1,15 @@
+*.pyc
+*.sw*
+*.pdf
+*.DS_Store
+*.out
+*.png
+*.pt
+
+data
+experiments
+experiments*
+cache
+cache*
+
+contrib
