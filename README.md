@@ -34,7 +34,7 @@ unzip data.zip -d .
 
 ### Experiments
 #### Train
-- For example, you can train an APoE model for vision and haptic data (# of modalities = 2) as follows,  
+- For example, you can train a vae with implicit posterior for a mixutre of 25 gaussians as follows,  
   ```sh
   python ivae_ardae.py \
   --cache experiments/25gaussians \
