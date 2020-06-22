@@ -1,5 +1,4 @@
 import os
-from packaging import version
 import numpy as np
 import torch
 from torchvision import datasets, transforms
@@ -56,34 +55,13 @@ def get_mnist(train_batch_size, eval_batch_size, dataset, kwargs, binary=False, 
         raise NotImplementedError
 
     # init dataset (train / val)
-    if version.parse(torch.__version__) <= version.parse("0.4.1"):
-        raise NotImplementedError
-        #train_dataset = DATASET('data/mnist', train=True, download=True, transform=get_mnist_transform(binary=binary, center=center, image_size=image_size))
-        #val_dataset   = DATASET('data/mnist', train=True, download=True, transform=get_mnist_transform(binary=binary, center=center, image_size=image_size))
-        #n = len(train_dataset.train_data)
-        #split_filename = os.path.join('data/mnist', '{}-val{}-split.pt'.format(dataset, val_size))
-        #if os.path.exists(split_filename):
-        #    indices = torch.load(split_filename)
-        #else:
-        #    indices = torch.from_numpy(np.random.permutation(n))
-        #    torch.save(indices, open(split_filename, 'wb'))
-        #train_dataset.train_data   = torch.index_select(train_dataset.train_data,   0, indices[:n-val_size])
-        #train_dataset.train_labels = torch.index_select(train_dataset.train_labels, 0, indices[:n-val_size])
-        #val_dataset.train_data   = torch.index_select(val_dataset.train_data,   0, indices[n-val_size:])
-        #val_dataset.train_labels = torch.index_select(val_dataset.train_labels, 0, indices[n-val_size:])
-
-        ## init dataset test
-        #test_dataset = DATASET('data/mnist', train=False, transform=get_mnist_transform(binary=binary, center=center, image_size=image_size))
-    #else:
-
-    # init dataset (train / val)
     train_dataset = DATASET('data', train=True, download=True, transform=get_mnist_transform(binary=binary, center=center, image_size=image_size))
     val_dataset   = DATASET('data', train=True, download=True, transform=get_mnist_transform(binary=binary, center=center, image_size=image_size)) if not final_mode else None
 
     # final mode
     if not final_mode:
         n = len(train_dataset.data)
-        split_filename = os.path.join('data/mnist', '{}-val{}-split.pt'.format(dataset, val_size))
+        split_filename = os.path.join('data/MNIST', '{}-val{}-split.pt'.format(dataset, val_size))
         if os.path.exists(split_filename):
             indices = torch.load(split_filename)
         else:
