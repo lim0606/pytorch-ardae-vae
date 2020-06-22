@@ -18,6 +18,7 @@ Example code to train an implicit sampler using AR-DAE-based entropy gradient es
 `pytorch==1.2.0`  
 `tensorflow` (for tensorboardX)  
 `tensorboardX`  
+`git+https://github.com/lim0606/contrib.git`  
 
 #### Dataset
 ```sh
